@@ -1,0 +1,67 @@
+.outer-wrapper {
+  min-width: $width;
+  min-height: 100%;
+  overflow: hidden;
+  background: image-url("bg/wood.jpg");
+}
+
+.inner-wrapper-top {
+  background: image-url("bg/dark_bg.jpg");
+  padding: 0 5px;
+
+  .page-home & {
+    padding-bottom: 30px;
+  }
+}
+
+.content-wrapper, .content-inner {
+
+  &:before, &:after {
+    height: 46px;
+    width: 84px;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  padding-top: 16px;
+
+  &:before, &:after {
+    @include pseudo-block($top: 0);
+  }
+
+  &:before {
+    @include oneline-sprite($icons, content-icon-before);
+  }
+
+  &:after {
+    @include oneline-sprite($icons, content-icon-after);
+  }
+}
+
+.content-outer {
+  padding-bottom: 16px;
+
+  &:before, &:after {
+    @include pseudo-block($left: 84px, $right: 83px);
+    height: 46px;
+  }
+
+  &:before {
+    top: 0;
+    background: image-url("bg/content-icon-center.png");
+  }
+
+  &:after {
+    bottom: 0;
+    background: image-url("bg/content-icon-center-a.png");
+  }
+}

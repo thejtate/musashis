@@ -1,0 +1,4 @@
+name = Facebook likebox
+description = Facebook likebox with all configs from FB sharing api
+core = 7.x
+package = Facebook likebox

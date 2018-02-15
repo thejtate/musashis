@@ -1,0 +1,121 @@
+.sidebar {
+  float: right;
+  text-align: center;
+  width: 200px;
+
+  .sb-header {
+    background: url("../images/bg/sidebar-bg.png");
+    width: 186px;
+    height: 283px;
+    word-wrap: break-word;
+    margin: 0 auto 15px auto;
+  }
+
+  .sidebar-menu {
+    margin-bottom: 25px;
+
+    .menu {
+      padding-top: 40px;
+    }
+
+    li {
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    a {
+      text-transform: uppercase;
+      color: #99938a;
+      @include font-size(14px);
+      font-family: $quantico;
+      @include text-shadow(2px 2px 2px black);
+      line-height: 28px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .share-wrapp {
+
+    .list-share {
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        @include inline-block;
+        margin: 0 2px;
+      }
+
+      a {
+        @include text-hide;
+        display: block;
+      }
+
+      .item-facebook a {
+        @include oneline-sprite-box($sprites, share-a);
+
+        &:hover {
+          @include oneline-sprite-box($sprites, share-a-hover);
+        }
+      }
+
+      .item-twitter a {
+        @include oneline-sprite-box($sprites, share-b);
+
+        &:hover {
+          @include oneline-sprite-box($sprites, share-b-hover);
+        }
+      }
+
+      .item-mail a {
+        @include oneline-sprite-box($sprites, share-c);
+
+        &:hover {
+          @include oneline-sprite-box($sprites, share-c-hover);
+        }
+      }
+    }
+  }
+
+  .sb-footer {
+    margin: 0 auto;
+
+    .page-about-us & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-about-us.png");
+      height: 200px;
+      width: 200px;
+    }
+
+    .page-home & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-home.png");
+      height: 257px;
+      width: 128px;
+    }
+
+    .page-gallery & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-gallery.png");
+      height: 200px;
+      width: 200px;
+    }
+
+    .page-contact & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-contact.png");
+      height: 200px;
+      width: 200px;
+    }
+
+    .page-menu & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-menu.png");
+      height: 200px;
+      width: 200px;
+    }
+
+    .page-life-of-musashi & {
+      background: url("../images/hieroglyphs/sidebar-hieroglyph-life-of-musashi.png");
+      height: 200px;
+      width: 200px;
+    }
+  }
+}

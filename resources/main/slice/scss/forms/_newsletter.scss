@@ -1,0 +1,23 @@
+&.form-newsletter {
+
+  .field-city {
+    width: 165px;
+    @include inline();
+    margin-right: 15px;
+  }
+
+  .field-state {
+    @include inline();
+    margin-right: 15px;
+
+    .form-select {
+      width: 100%;
+    }
+  }
+
+  .field-zip {
+    @include inline();
+    width: 80px;
+  }
+
+}

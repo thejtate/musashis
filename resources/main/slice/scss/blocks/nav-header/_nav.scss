@@ -1,0 +1,13 @@
+.nav {
+
+  .menu {
+    display: table;
+
+    li {
+      display: table-cell;
+    }
+  }
+
+  @import "top";
+  @import "bottom";
+}

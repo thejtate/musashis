@@ -1,0 +1,78 @@
+.b-gallery {
+  text-align: center;
+
+  img {
+    display: block;
+  }
+
+  .frame-inner {
+    @include inline-block;
+    margin: 0 auto;
+  }
+
+  .gallery-list {
+    margin: 0;
+    padding: 0;
+    @include clear-box;
+
+    li {
+      list-style: none;
+      border: 2px solid #af8143;
+      float: left;
+      margin: 9px;
+
+      img {
+        width: 116px;
+        height: 80px;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .preview-wrapp {
+    height: 438px;
+    width: 682px;
+    background: url("../images/bg/frame.png");
+    @include box-sizing(border-box);
+    padding: 16px;
+    margin: 0 auto 20px auto;
+  }
+
+  .pager {
+
+    .prev, .next {
+      display: block;
+      @include text-hide;
+      position: absolute;
+      top: 230px;
+      z-index: 1;
+    }
+
+    .prev {
+      @include oneline-sprite-box($sprites, pager-prev);
+      left: 50px;
+
+      &:hover {
+        background: url("../images/sprites/pager-prev-hover.png");
+      }
+
+      &:active {
+        background: url("../images/sprites/pager-prev-active.png");
+      }
+    }
+
+    .next {
+      @include oneline-sprite-box($sprites, pager-next);
+      right: 50px;
+
+      &:hover {
+        background: url("../images/sprites/pager-next-hover.png");
+      }
+
+      &:active {
+        background: url("../images/sprites/pager-next-active.png");
+      }
+    }
+  }
+}

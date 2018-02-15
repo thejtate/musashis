@@ -1,0 +1,27 @@
+.header {
+
+  &.dropdown-top_nav {
+
+    .b-nav-header-top .wrapper-nav {
+      margin-top: 160px;
+    }
+  }
+
+  .header-inner {
+    background: url("../images/bg/stone_wall.jpg") 0 -39px repeat-x;
+    height: 174px;
+
+    .logo {
+      text-align: center;
+
+      a {
+        @include inline-block;
+
+        img {
+          position: relative;
+          bottom: -10px;
+        }
+      }
+    }
+  }
+}

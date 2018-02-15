@@ -1,0 +1,141 @@
+<?php
+
+define('MIN_BLOCK_WIDTH', 292);
+define('DEFAULT_BLOCK_HEIGHT', 300);
+/**
+ * Implements hook_block_info().
+ */
+function fblikebox_block_info() {
+  $blocks['fblikebox'] = array(
+    'info'   => t('Facebook Like Box'),
+    'cache'  => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function fblikebox_block_configure($delta = '') {
+
+  global $base_root;
+
+  $form = array();
+  if ($delta == 'fblikebox') {
+    $form['fb_url'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Facebook Page URL'),
+      '#description' => t('The full URL of your Facebook page, e.g. http://www.facebook.com/platform'),
+      '#default_value' => variable_get('fb_like_url', 'http://www.facebook.com/platform'),
+    );
+
+    $form['fb_width'] = array(
+      '#type' => 'textfield',
+      '#size' => 6,
+      '#maxlength' => 4,
+      '#title' => t('Width'),
+      '#description' => t('Width of the Facebook Like Box. Minimum supported width is 292px.'),
+      '#default_value' => variable_get('fb_like_width', 292),
+    );
+
+    $form['fb_height'] = array(
+      '#type' => 'textfield',
+      '#size' => 6,
+      '#maxlength' => 5,
+      '#title' => t('Height'),
+      '#description' => t('Height of the Facebook Like Box. '),
+      '#default_value' => variable_get('fb_like_height', 300),
+    );
+
+    $form['fb_border'] = array(
+      '#type' => 'textfield',
+      '#size' => 10,
+      '#maxlength' => 7,
+      '#title' => t("Border color"),
+      '#description' => t('Color of 1px border around iframe, including leading "#" such as #ff0000.'),
+      '#default_value' => variable_get('fb_like_border', ''),
+    );
+
+    $form['fb_toggles'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Configuration'),
+      '#options' => array(
+        'fb_faces' => 'Show Faces',
+        'fb_stream' => 'Show Stream',
+        'fb_header' => 'Show FB Header',
+        'fb_color' => 'Dark scheme',
+        'fb_show_borders' => 'Show borders',
+      ),
+      '#default_value' => variable_get('fb_like_toggles', array('fb_faces', 'fb_header')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function fblikebox_block_save($delta = '', $edit = array()) {
+
+  if ($delta == 'fblikebox') {
+    variable_set('fb_like_url', $edit['fb_url']);
+    variable_set('fb_like_url', $edit['fb_url']);
+    variable_set('fb_like_width', $edit['fb_width']);
+    variable_set('fb_like_height', $edit['fb_height']);
+    variable_set('fb_like_border', $edit['fb_border']);
+    $toggles = array();
+    foreach ($edit['fb_toggles'] as $key => $val) {
+      if ($val) $toggles[] = $key;
+    }
+    variable_set('fb_like_toggles', $toggles);
+  }
+ 
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function fblikebox_block_view($delta = '') {
+
+  $block = array();
+  global $base_root;
+
+  if ($delta == 'fblikebox') {
+    $url = urlencode( variable_get('fb_like_url', 'http://www.facebook.com/platform'));
+    $width = variable_get('fb_like_width', MIN_BLOCK_WIDTH);
+    $height = variable_get('fb_like_height', DEFAULT_BLOCK_HEIGHT);
+    $border = urlencode(variable_get('fb_like_border', ''));
+    $opts = variable_get('fb_like_toggles', array('fb_faces', 'fb_stream', 'fb_header', 'fb_color'));
+
+    $block['subject'] = "Find us on Facebook";
+    $block['content'] = array(
+        '#markup' => sprintf('<iframe src="//www.facebook.com/plugins/likebox.php?href=%s&amp;width=%u&amp;height=%u&amp;colorscheme=%s&amp;show_faces=%s&amp;border_color=%s&amp;stream=%s&amp;show_border=%s&amp;header=%s" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:%spx; height:%spx;" allowTransparency="true"></iframe>',
+          $url,
+          $width,
+          $height,
+          (in_array('fb_color', $opts)) ? 'dark' : 'light',
+          (in_array('fb_faces', $opts)) ? 'true' : 'false',
+          $border,
+          (in_array('fb_stream', $opts)) ? 'true' : 'false',
+          (in_array('fb_show_borders', $opts)) ? 'true' : 'false',
+          (in_array('fb_header', $opts)) ? 'true' : 'false',
+          $width,
+          $height
+        ),
+      );
+    }
+
+  return $block;
+}
+
+/**
+ * Implements hook_help().
+ */
+function fblikebox_help($path, $arg) {
+  if ($path == 'admin/help#fblikebox') {
+    return '<p>' . t('This module almost similar to the module !facebook_boxes, just creates only one new !like block and has config for detecting color scheme, which you can see and configure on !blockpage.',
+      array('!like' => l(t('Facebook Like Box'), 'admin/structure/block/manage/fblikebox/fblikebox/configure'), '!blockpage' => l( t('block administration page'), 'admin/structure/block/list'), '!facebook_boxes' => l(t('Facebook Boxes'), 'https://drupal.org/project/facebook_boxes'))) . '</p><p>' .
+    t("For details on how these boxes work, visit !fbdocs", array('!fbdocs' => l(t('Facebook\'s documentation'), 'https://developers.facebook.com/docs/plugins/'))) . '</p>';
+  }
+}

@@ -1,0 +1,27 @@
+name        = Wc Musashi's Theme
+description = Custom Western concepts Musashis main theme
+core        = 7.x
+
+
+stylesheets[all][] = css/styles.css
+
+;stylesheets-conditional[IE 8][all][] = css/screen-ie8.css
+
+stylesheets[all][] = css/custom.css
+
+scripts[] = js/lib/combobox.js
+scripts[] = js/lib/jquery.jcarousel.min.js
+scripts[] = js/lib/jquery.pikachoose.min.js
+scripts[] = js/lib/jquery.myGallery.js
+scripts[] = js/lib/jquery.flexslider-min.js
+scripts[] = js/js.js
+
+regions[header] = Header
+regions[content] = Content
+regions[right_sidebar] = Right Sidebar
+regions[footer] = Footer
+
+
+
+
+

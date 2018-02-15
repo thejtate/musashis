@@ -1,0 +1,112 @@
+.outer-wrapper {
+  background: url("../images/bg/wood.jpg");
+  min-height: 100%;
+  min-width: $width-wrapp;
+  padding-bottom: 100px;
+}
+
+.inner-wrapper-top {
+  background: url("../images/bg/dark_bg.jpg");
+  position: relative;
+  padding-bottom: 17px;
+
+  &:after {
+    @include pseudo-block($bottom: 0, $left: 0, $right: 0);
+    background: url("../images/bg/bottom_wood_top.jpg");
+    height: 17px;
+  }
+
+  .content-wrapper {
+    margin: 0 auto;
+    width: $width;
+    padding: 18px 0 35px 0;
+
+    .content-outer {
+      position: relative;
+      width: 853px;
+      margin: 58px auto 90px auto;
+      @include box-sizing(border-box);
+      padding: 15px 70px;
+      background: url("../images/bg/paper_bg.png") repeat-y;
+
+      &:before {
+        background: url("../images/bg/poll_top.png");
+        width: 913px;
+        height: 68px;
+        @include pseudo-block($bottom: 100%, $left: -30px);
+      }
+
+      &:after {
+        background: url("../images/bg/poll_bottom.png");
+        width: 915px;
+        height: 115px;
+        @include pseudo-block($top: 100%, $left: -30px);
+      }
+
+      .page-home & {
+        width: 493px;
+        margin-left: 380px;
+        background: url("../images/bg/paper_bg-a.png") repeat-y;
+
+        &:before {
+          background: url("../images/bg/poll_top-a.png");
+          width: 546px;
+          height: 67px;
+          @include pseudo-block($bottom: 100%, $left: -28px);
+        }
+
+        &:after {
+          background: url("../images/bg/poll_bottom-a.png");
+          width: 547px;
+          height: 88px;
+          @include pseudo-block($top: 100%, $left: -27px);
+        }
+      }
+
+      .page-life-of-musashi & {
+        padding: 0px 23px;
+      }
+    }
+
+    &.with-sidebar {
+
+      .content-outer {
+        float: left;
+      }
+    }
+
+    .content-inner {
+
+      .page-about-us &, .page-menu & {
+        padding-bottom: 110px;
+      }
+
+      .page-home & {
+        padding-bottom: 90px;
+      }
+
+      .page-about-us &, .page-menu &, .page-home & {
+        position: relative;
+
+        &:after {
+          @include oneline-sprite-box($sprites, icon-page-about-us);
+          @include pseudo-block($bottom: 0, $left: 50%);
+          margin-left: -37px;
+        }
+      }
+    }
+  }
+}
+
+.inner-wrapper-bottom {
+  width: $width;
+  margin: 0 auto;
+
+  .page-home & {
+    margin-top: 80px;
+  }
+
+  .page-contact & {
+    margin-top: 23px;
+  }
+}

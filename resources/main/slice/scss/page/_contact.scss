@@ -1,0 +1,28 @@
+&.page-contact {
+
+  .b-text {
+    margin-bottom: 25px;
+
+    p {
+      margin: 0;
+
+      span {
+        text-transform: uppercase;
+        color: #a1927c;
+        font-family: $quantico;
+        font-weight: bold;
+        font-size: 100%;
+      }
+    }
+  }
+
+  .cols {
+    text-align: center;
+
+    .col {
+      width: 350px;
+      @include inline();
+      margin: 0 17px;
+    }
+  }
+}

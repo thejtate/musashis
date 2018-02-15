@@ -1,0 +1,30 @@
+.header {
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.header-inner {
+  padding-top: 35px;
+  height: 106px;
+  overflow: hidden;
+  @include box-sizing(border-box);
+  background: image-url("bg/stone_wall.jpg");
+
+  .logo {
+    margin-bottom: 7px;
+    padding: 0 18px;
+
+    img {
+      max-width: 293px;
+      width: 100%;
+      height: auto;
+    }
+    
+    h1 {
+      @include hide-text;
+      height: 0;
+      margin: 0;
+    }
+  }
+}

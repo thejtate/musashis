@@ -1,0 +1,42 @@
+&.b-nav-header-bottom {
+  background: url("../images/bg/wood_navigation.jpg") repeat-x;
+  height: 53px;
+
+  a {
+    text-transform: uppercase;
+    @include font-size(16px);
+    color: #b25e28;
+    line-height: 46px;
+    font-family: $quantico;
+    font-weight: bold;
+    margin: 0 37px;
+    position: relative;
+    &:hover {
+      @include text-shadow(0px 0px 12px #e5772e);
+      color: #fcaf4d;
+
+    }
+    &.item-home {
+      @include oneline-sprite-box($sprites, icon-home);
+      display: block;
+      text-indent: -9999px;
+      line-height: 20px;
+    }
+  }
+
+  li {
+
+    &.active {
+      a {
+        @include text-shadow(0px 0px 12px #e5772e);
+        color: #fcaf4d;
+      }
+
+      .item-home {
+        @include oneline-sprite-box($sprites, icon-home-active);
+        position: relative;
+        top: -16px;
+      }
+    }
+  }
+}

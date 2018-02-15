@@ -1,0 +1,88 @@
+.page {
+
+  .frame-inner {
+    @include box-sizing(border-box);
+    padding: 8px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    .frame-wrapp {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      & > div {
+        position: absolute;
+      }
+
+      .f-top-left, .f-top-right, .f-center-top {
+        top: 0;
+      }
+
+      .f-bot-left, .f-bot-right, .f-center-bot {
+        bottom: 0;
+      }
+
+      .f-top-left, .f-bot-left, .f-center-left {
+        left: 0;
+      }
+
+      .f-top-right, .f-bot-right, .f-center-right {
+        right: 0;
+      }
+
+      .f-center-left, .f-center-right {
+        width: 9px;
+        top: 9px;
+        bottom: 9px;
+      }
+
+      .f-center-top, .f-center-bot {
+        height: 9px;
+        left: 9px;
+        right: 9px;
+      }
+
+      .f-top-left {
+        @include oneline-sprite-box($icons, frame-top-left);
+      }
+
+      .f-top-right {
+        @include oneline-sprite-box($icons, frame-top-right);
+      }
+
+      .f-bot-left {
+        @include oneline-sprite-box($icons, frame-bottom-left);
+      }
+
+      .f-bot-right {
+        @include oneline-sprite-box($icons, frame-bottom-right);
+      }
+
+      .f-center-left {
+        @include oneline-sprite($v-icons, frame-center-left, repeat-y);
+      }
+
+      .f-center-right {
+        @include oneline-sprite($v-icons, frame-center-right, repeat-y);
+      }
+
+      .f-center-top {
+        @include oneline-sprite($h-icons, frame-center-top, repeat-x);
+      }
+
+      .f-center-bot {
+        @include oneline-sprite($h-icons, frame-center-bottom, repeat-x);
+      }
+    }
+  }
+
+  @import "home";
+  @import "about-us";
+  @import "menu";
+  @import "contact";
+  @import "gallery";
+}

@@ -1,0 +1,36 @@
+.b-video {
+  position: relative;
+  margin-bottom: 70px;
+  text-align: center;
+
+  &:after {
+    @include oneline-sprite-box($sprites, icon-katana);
+    @include pseudo-block($bottom: -60px, $left: -15px);
+  }
+
+  .frame-inner {
+    @include inline-block;
+  }
+
+  .video-wrapper {
+    position: relative;
+
+    img {
+      display: block;
+    }
+  }
+
+  .video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -42px;
+    margin-left: -42px;
+    display: block;
+    @include oneline-sprite-box($sprites, video-btn);
+
+    &:hover {
+      @include oneline-sprite-box($sprites, video-btn-hover);
+    }
+  }
+}

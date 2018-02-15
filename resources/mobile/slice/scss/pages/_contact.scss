@@ -1,0 +1,26 @@
+&.page-contact {
+
+  .b-text {
+    text-align: center;
+
+    p {
+
+      &:first-letter {
+        font-size: inherit;
+      }
+
+      span {
+        color: #a1927c;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .b-map {
+    text-align: center;
+
+    .geolocation-help, .geolocation-map {
+      margin: 0;
+    }
+  }
+}

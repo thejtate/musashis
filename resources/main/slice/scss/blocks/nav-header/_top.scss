@@ -1,0 +1,58 @@
+&.b-nav-header-top {
+  background: #282828;
+  @include background-image(linear-gradient(top, #050505 0%,#1a1a1a 50%,#282828 100%));
+  z-index: 2;
+  position: relative;
+  @include box-shadow(0 0 20px #000);
+
+  .wrapper-nav {
+    background: #000;
+  }
+
+  a {
+    @include font-size(14px);
+    display: block;
+    text-align: center;
+    min-width: 148px;
+    position: relative;
+    line-height: 40px;
+    font-family: $cuprumregular;
+    font-weight: bold;
+    padding: 0 2px 0;
+    color: #99958e;
+
+    .text-item {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .logo_top {
+    width: 208px;
+    vertical-align: bottom;
+
+    .text-item {
+      display: block;
+      bottom: 100%;
+      position: absolute;
+      @include font-size(23px);
+      @include text-shadow(1px 1px 1px #000);
+      color: #d9d8d4;
+      text-transform: none;
+      padding: 0 30px 38px;
+      line-height: 1.4;
+    }
+
+    .logo {
+      display: block;
+      height: 40px;
+
+      img {
+        margin: -12px 0 0 0;
+      }
+    }
+  }
+}

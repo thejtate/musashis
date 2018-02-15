@@ -1,0 +1,35 @@
+&.page-home {
+
+  .image {
+    float: right;
+    width: 60%;
+    margin-right: -20%;
+
+    img {
+      max-width: 135px;
+    }
+  }
+
+  .image-food {
+    position: absolute;
+    left: 0;
+    right: -17px;
+    bottom: -31px;
+    z-index: 1;
+
+    img {
+      max-width: 336px;
+    }
+  }
+
+  .b-text {
+    float: left;
+    width: 60%;
+    position: relative;
+
+    p {
+      line-height: 12px;
+      font-size: 9px;
+    }
+  }
+}

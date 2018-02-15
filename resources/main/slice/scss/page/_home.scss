@@ -1,0 +1,77 @@
+&.page-home {
+
+  .b-text {
+    padding: 0 35px;
+  }
+
+  .image {
+    position: absolute;
+    top: -93px;
+    left: -498px;
+    z-index: 1;
+  }
+
+  .date {
+    font-family: $quantico;
+    @include font-size(13px);
+    text-transform: uppercase;
+    margin: 0 0 13px 0;
+    color: #a66742;
+    font-weight: bold;
+    @include text-shadow(2px 2px 2px black);
+  }
+
+  .cols {
+    @include clear-box;
+  }
+
+  .col {
+    float: left;
+    margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .item-text {
+    color: #8c8377;
+    @include font-size(14px);
+    margin: 0 0 20px 0;
+    font-family: $robotoslab-regular;
+
+    p {
+      color: #8c8377;
+      font-size: 100%;
+    }
+  }
+
+  .col-c {
+    width: 350px;
+  }
+
+  .col-wrapp {
+    margin: 38px 0 70px;
+    background: url("../images/bg/content-bg-center.png") repeat-y;
+    width: 342px;
+    padding: 0 28px;
+    text-align: center;
+    @include box-sizing(border-box);
+    position: relative;
+    word-wrap: break-word;
+    min-height: 436px;
+    &:before {
+      @include oneline-sprite-box($sprites, content-bg-before);
+      @include pseudo-block($bottom: 100%, $left: 0);
+    }
+
+    &:after {
+      @include oneline-sprite-box($sprites, content-bg-after);
+      @include pseudo-block($top: 100%, $left: 0);
+    }
+  }
+}

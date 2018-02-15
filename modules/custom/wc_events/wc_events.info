@@ -1,0 +1,5 @@
+name = Wc Events
+description = Western concepts events custom functionality
+core = 7.x
+package = Wc
+configure = admin/config/wc_events

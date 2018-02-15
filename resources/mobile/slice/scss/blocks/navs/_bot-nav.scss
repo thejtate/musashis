@@ -1,0 +1,64 @@
+&.b-bot-nav {
+  position: relative;
+  z-index: 2;
+  font-family: $quantico;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  a {
+    letter-spacing: 1px;
+  }
+
+  .btn-dd {
+    padding-top: 3px;
+    //background: image-url("bg/wood_navigation.jpg");
+    background: image-url("bg/wood_navigation-a.jpg");
+    height: 50px;
+    @include box-sizing(border-box);
+
+    a {
+      display: block;
+      padding: 11px 40px;
+      position: relative;
+      @include text-shadow(0px 0px 12px #e5772e);
+      color: #fcaf4d;
+
+      &:after {
+        @include oneline-sprite-box($icons, icon-menu-active);
+        @include pseudo-block($right: 23px, $top: 50%);
+        margin-top: -4px;
+      }
+    }
+  }
+
+  &.collapsed {
+
+    .btn-dd a:after {
+      background: image-url("icons/icon-menu.png");
+    }
+  }
+
+  .nav-items {
+    padding: 0 7px 7px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: image-url("bg/wood.jpg");
+    @include box-sizing(border-box);
+    @include box-shadow(0px 9px 29px -3px #1e0901, inset 0px 17px 40px 6px #1e0901);
+
+    a {
+      color: #9e501e;
+      padding: 8px 0;
+    }
+  }
+
+  .menu {
+    padding-top: 12px;
+
+    li {
+      margin: 0;
+      font-size: 15px;
+    }
+  }
+}

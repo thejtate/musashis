@@ -1,0 +1,27 @@
+$icons: sprite-map('icons/*.png', $spacing: 8px, $layout: 'smart');
+$h-icons: sprite-map('h-icons/*.png',$layout: 'vertical', $spacing: 8px);
+$v-icons: sprite-map('v-icons/*.png', $layout: 'horizontal', $spacing: 8px);
+
+$experimental-support-for-svg: true;
+
+//width
+$width: 320px;
+
+//font-size
+$base_fs_em: 1em;
+$base_fs_px: 16px;
+
+//fonts
+//for top menu
+$reverie-italicitalic: 'reverie_italicitalic';
+$tt-4: 'titilliumtext22l_ltmedium';
+
+//for site
+$cuprumregular: 'cuprumregular';
+$quantico: 'Quantico', sans-serif;
+$monika: 'monika';
+$monika-bold: 'monika-bold';
+$robotoslab-bold: 'robotoslab-bold';
+$robotoslab-light: 'robotoslab-light';
+$robotoslab-regular: 'robotoslab-regular';
+$robotoslab-thin: 'robotoslab-thin';

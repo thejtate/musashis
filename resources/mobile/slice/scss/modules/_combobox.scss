@@ -1,0 +1,87 @@
+.combo-wrapper, .combo-list {
+  @include box-sizing(border-box);
+  text-align: center;
+  font-family: $quantico;
+}
+
+.combo-wrapper {
+  font-size: 15px;
+  line-height: 40px;
+  padding: 0 15px;
+  outline: none;
+  cursor: pointer;
+  color: #dbccb3;
+  position: relative;
+
+  &:after {
+    @include oneline-sprite-box($icons, menu-content-after);
+    @include pseudo-block($bottom: 0px, $left: 100%);
+    margin-left: -15px;
+  }
+
+  &:before {
+    @include oneline-sprite-box($icons, menu-content-before);
+    @include pseudo-block($bottom: 0px, $right: 100%);
+    margin-right: -15px;
+  }
+
+  .combo-button {
+    display: none!important;
+  }
+
+  .combo-selected {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    position: relative;
+    width: 115px!important;
+    @include oneline-sprite($h-icons, menu-content-center, repeat-x);
+
+    &:after {
+      @include pseudo-block($bottom: 15px, $right: 0);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 7px solid #dbccb3;
+    }
+  }
+}
+
+.combo-wrapper-active .combo-selected:after {
+  border-top: none;
+  border-bottom: 7px solid #dbccb3;
+}
+
+.combo-list {
+  font-size: 12px;
+  margin: -11px 0 0;
+  padding: 0;
+  z-index: 8011;
+  color: #695a42;
+
+  li {
+    background: image-url("bg/bg-select.jpg");
+    border-left: 2px solid #dbcdb3;
+    border-right: 2px solid #dbcdb3;
+    padding: 3px 0;
+    margin: 0 1px;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+
+    &:after {
+      @include pseudo-block($left: -3px, $right: -3px, $top: 0, $bottom: -3px);
+      background: #af9d84;
+      z-index: -1;
+    }
+
+    &:first-child {
+      padding-top: 10px;
+    }
+
+    &:last-child {
+      padding-bottom: 10px;
+      border-bottom: 2px solid #dbcdb3;
+    }
+  }
+}

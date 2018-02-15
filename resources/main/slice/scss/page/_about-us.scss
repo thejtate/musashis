@@ -1,0 +1,37 @@
+&.page-about-us {
+
+  .content-right {
+    margin-left: 30px;
+    margin-bottom: 20px;
+
+    .frame-inner {
+      position: relative;
+      width: 362px;
+      height: 218px;
+
+      .image {
+        position: absolute;
+        top: -19px;
+      }
+    }
+  }
+
+  .cols {
+    text-align: center;
+
+    h5 {
+      width: 110px;
+      font-family: $quantico;
+      color: #9e8f7a;
+      text-transform: uppercase;
+      @include font-size(12px);
+      margin: 0 auto 15px auto;
+    }
+
+    .col {
+      @include inline-block;
+      width: 160px;
+      vertical-align: top;
+    }
+  }
+}

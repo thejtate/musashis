@@ -1,0 +1,23 @@
+$sprites: sprite-map('sprites/*.png', $spacing: 8px, $layout: 'smart');
+$h-sprites: sprite-map('h-sprites/*.png',$layout: 'vertical', $spacing: 8px);
+$v-sprites: sprite-map('v-sprites/*.png', $layout: 'horizontal', $spacing: 8px);
+
+$experimental-support-for-svg: true;
+
+//width
+$width: 1122px;
+$width-wrapp: 1300px;
+
+//font-size
+$base_fs_em: 1em;
+$base_fs_px: 16px;
+
+//fonts
+$cuprumregular: 'cuprumregular';
+$quantico: 'Quantico', sans-serif;
+$monika: 'monika';
+$monika-bold: 'monika-bold';
+$robotoslab-bold: 'robotoslab-bold';
+$robotoslab-light: 'robotoslab-light';
+$robotoslab-regular: 'robotoslab-regular';
+$robotoslab-thin: 'robotoslab-thin';

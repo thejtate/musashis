@@ -1,0 +1,82 @@
+.btn-wrapp {
+  text-align: center;
+  margin-top: 20px;
+
+  .ajax-progress-throbber {
+    background: url("../images/bg/bg_transparent_b.png") 0 0 repeat;
+    border: 1px solid #5b4d38;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    z-index: 5;
+    margin: 0 -17px;
+
+    .throbber {
+      @include border-radius(4px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -14px;
+      margin-left:-14px;
+      padding: 4px;
+      background: rgb(240, 240, 240) url("../images/throbber_min.gif") no-repeat 50% 50%;
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  @include font-size(13px);
+  font-family: $quantico;
+  color: #bfaf99;
+  background: none;
+  border: none;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  @include inline-block;
+  text-decoration: none;
+  line-height: 42px;
+  @include oneline-sprite($h-sprites, btn-center, repeat-x);
+
+  &:after {
+    @include oneline-sprite-box($sprites, btn-after);
+    @include pseudo-block($right: 100%, $top: 0);
+  }
+
+  &:before {
+    @include oneline-sprite-box($sprites, btn-before);
+    @include pseudo-block($left: 100%, $top: 0);
+  }
+
+  &:hover {
+
+    @include oneline-sprite($h-sprites, btn-center-hover, repeat-x);
+
+    &:after {
+      @include oneline-sprite-box($sprites, btn-after-hover);
+    }
+
+    &:before {
+      @include oneline-sprite-box($sprites, btn-before-hover);
+    }
+  }
+}
+
+.submit-wrapper {
+
+  .form-submit {
+    background: none;
+    border: none;
+    padding: 11px 28px;
+    margin: 0 -28px;
+    position: relative;
+    z-index: 1;
+    color: #bfaf99;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,84 @@
+&.page-menu {
+
+  .content-menu {
+    margin-bottom: 30px;
+    margin-top: 5px;
+
+    .menu {
+      display: table;
+    }
+
+    a {
+      text-transform: uppercase;
+      color: #9e8f7a;
+      font-family: $quantico;
+      font-weight: bold;
+      @include font-size(14px);
+      letter-spacing: 1px;
+      padding: 0 20px 0;
+      @include inline-block;
+      line-height: 39px;
+      position: relative;
+
+      &:hover {
+        color: #b28647;
+      }
+    }
+
+    li {
+      display: table-cell;
+      padding: 0 12px;
+
+      &.active a {
+        color: #dbccb3;
+        @include oneline-sprite($h-sprites, menu-content-center, repeat-x);
+
+        &:after {
+          @include oneline-sprite-box($sprites, menu-content-after);
+          @include pseudo-block($bottom: 0px, $left: 100%);
+        }
+
+        &:before {
+          @include oneline-sprite-box($sprites, menu-content-before);
+          @include pseudo-block($bottom: 0px, $right: 100%);
+        }
+      }
+    }
+  }
+
+  .two-cols {
+
+    h5, .price {
+      @include font-size(17px);
+      color: #663e29;
+    }
+
+    h5 {
+      font-family: $robotoslab-bold;
+      display: inline;
+      margin: 0 15px 0 0;
+    }
+
+    p {
+      color: #6b6152;
+      margin: 2px 0 0 0;
+    }
+
+    .price {
+      font-family: $robotoslab-regular;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-row-item {
+      list-style: none;
+      @include inline-block;
+      vertical-align: top;
+      width: 320px;
+      margin: 0 15px 10px;
+    }
+  }
+}

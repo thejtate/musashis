@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+ul.menu {
+  padding: 0;
+  margin: 0 auto;
+
+  li {
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.combo-list {
+  margin: 0;
+  padding: 5px 3px;
+  background: #6a2d14;
+  background: rgba(106, 44, 19, 1);
+  @include box-shadow(inset 2px -2px 1px rgba(0, 0, 0, 0.5), inset -2px 0 1px rgba(146, 78, 49, 0.8));
+  color: #a66742;
+  @include text-shadow(1px -1px 1px black);
+  text-transform: uppercase;
+  font-family: $robotoslab-bold;
+  @include box-sizing(border-box);
+  @include border-radius(0 0 4px 4px);
+  z-index: 2;
+
+  li {
+    list-style: none;
+    color: #a66742;
+    line-height: 24px;
+    padding: 0 5px;
+    word-wrap: break-word;
+    cursor: pointer;
+
+    &:hover {
+      background: #330f01;
+    }
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
